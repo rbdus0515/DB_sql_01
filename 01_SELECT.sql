@@ -275,12 +275,17 @@ WHERE DEPT_CODE IN('D1', 'D6', 'D9');
  
 SELECT EMP_ID, EMP_NAME, DEPT_CODE
 FROM EMPLOYEE
-WHERE DEPT_CODE NOT IN('D1', 'D6', 'D9')
-OR DEPT_CODE IS NULL;
+WHERE DEPT_CODE NOT IN('D1', 'D6', 'D9') -- 12명
+OR DEPT_CODE IS NULL; -- 부서코드 없는 2명 포함
+
+-- IS NULL
+-- IS NOT NULL
+
+------------------------------------------------------
 
 
 
-
+d이걸 인식해야 되는거 아닌가?
 
 
 
