@@ -48,7 +48,7 @@ WHERE  1 = '1';
 SELECT EMP_NAME, HIRE_DATE, SYSDATE FROM EMPLOYEE;
 
 -- 2023-08-03 12:05:31.000
--- SYSDATE : 시스템사으이 현재 시간(날짜)를 나타내는 상수
+-- SYSDATE : 시스템상의 현재 시간(날짜)를 나타내는 상수
 
 SELECT SYSDATE FROM DUAL;
 -- DUAL (DUmy tAbLe) 테이블 : 가짜 테이블(임시 조회용 테이블)
@@ -321,7 +321,7 @@ WHERE BONUS IS NULL; -- 14행
  */
 
 -- EMPLOYEE 테이블 급여 오름차순으로
--- 사번, 이름, 급여조회
+-- 사번, 이름, 급여조회ㄴ
 
 SELECT EMP_ID, EMP_NAME, SALARY
 FROM EMPLOYEE
