@@ -299,7 +299,7 @@ SELECT EMP_NAME, BONUS
 FROM EMPLOYEE
 WHERE BONUS IS NOT NULL; -- 9행
 
--- EMPLOYEE 테이블에서 보너스가 DJQT는 사원의 이름, 보너스 조회
+-- EMPLOYEE 테이블에서 보너스가 없는 사원의 이름, 보너스 조회
 
 SELECT EMP_NAME, BONUS
 FROM EMPLOYEE
@@ -321,7 +321,7 @@ WHERE BONUS IS NULL; -- 14행
  */
 
 -- EMPLOYEE 테이블 급여 오름차순으로
--- 사번, 이름, 급여조회ㄴ
+-- 사번, 이름, 급여조회
 
 SELECT EMP_ID, EMP_NAME, SALARY
 FROM EMPLOYEE
