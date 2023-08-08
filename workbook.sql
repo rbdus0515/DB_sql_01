@@ -183,7 +183,57 @@ SELECT STUDENT_NO , STUDENT_NAME , DEPARTMENT_NAME
 FROM TB_STUDENT
 JOIN TB_DEPARTMENT USING (DEPARTMENT_NO);
 
+-- 문제 7
+SELECT 
+FROM 
 
+-- 문제 8
+SELECT 
+FROM 
+
+-- 문제 9
+SELECT 
+FROM 
+
+-- 문제 10
+SELECT 
+FROM 
+
+-- 문제 11
+SELECT 
+FROM 
+
+-- 문제 12
+SELECT 
+FROM 
+
+-- 문제 13
+SELECT 
+FROM 
+
+-- 문제 14
+SELECT 
+FROM 
+
+-- 문제 15
+SELECT 
+FROM 
+
+-- 문제 16
+SELECT 
+FROM 
+
+-- 문제 17
+SELECT 
+FROM 
+
+-- 문제 18
+SELECT 
+FROM 
+
+-- 문제 19
+SELECT 
+FROM 
 
 
 
