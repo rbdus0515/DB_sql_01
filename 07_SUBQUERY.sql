@@ -761,7 +761,7 @@ FROM EMPLOYEE;
 WHERE HIRE_DATE 
 
 
--- 문제 7
+-- 문제 7 *** 메인 쿼리 SELECT문은 완성, 나머지 미완성
 SELECT EMP_ID , EMP_NAME , JOB_NAME , 
 		(123 - SUBSTR(EMP_NO, 1, 2)) 나이 ,
 		(SALARY * 12) + (SALARY * BONUS) 보너스포함연봉
