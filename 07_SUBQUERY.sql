@@ -755,7 +755,7 @@ WHERE HIRE_DATE
 
 -- 문제 7 *** 메인 쿼리 SELECT문은 완성, 나머지 미완성
 SELECT EMP_ID , EMP_NAME , JOB_NAME , 
-		(123 - SUBSTR(EMP_NO, 1, 2)) 나이 ,
+		(122 - SUBSTR(EMP_NO, 1, 2)) 나이 ,
 		(SALARY * 12) + (SALARY * 1 + (NVL(BONUS, 0))) 보너스포함연봉
 FROM EMPLOYEE
 JOIN JOB USING (JOB_CODE)
