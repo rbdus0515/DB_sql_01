@@ -37,18 +37,54 @@
 */
 
 
+CREATE SEQUENCE SEQ_TEST;
+
+-- * CURRVAL 주의 사항 *
+--> CURRVAL는 마지막 NEXTVAL 호출값을 다시 보여주는 기능!
+--> NEXTVAL를 먼저 호출해야 CURRVAL 호출이 가능!
+
+SELECT SEQ_TEST.CURRVAL FROM DUAL;
+-- ORA-08002: 시퀀스 SEQ_TEST.CURRVAL은 이 세션에서는 정의 되어 있지 않습니다
+
+SELECT SEQ_TEST.NEXTVAL FROM DUAL; -- 1
+
+SELECT SEQ_TEST.CURRVAL FROM DUAL; -- 1
+
+SELECT SEQ_TEST.NEXTVAL FROM DUAL; -- 2
+SELECT SEQ_TEST.NEXTVAL FROM DUAL; -- 3
+SELECT SEQ_TEST.NEXTVAL FROM DUAL; -- 4
+SELECT SEQ_TEST.NEXTVAL FROM DUAL; -- 5
+
+SELECT SEQ_TEST.CURRVAL FROM DUAL; -- 5
 
 
+---------------------------------------------------------------------------
 
 
+-- 실제 사용 예시
+
+CREATE TABLE EMP_TEMP
+AS SELECT EMP_ID, EMP_NAME FROM EMPLOYEE;
 
 
+SELECT * FROM EMP_TEMP;
 
 
+-- 223번부터 10씩 증가하는 시퀀스 생성
+
+CREATE SEQUENCE SEQ_TEMP
+START WITH 223 		-- 223번 시작
+INCREMENT BY 10		-- 10씩 증가
+NOCYCLE					-- 반복 X (기본값)
+NOCACHE;				-- 캐시 X (기본 20)
 
 
+-- EMP_TEMP 테이블에 사원 정보 삽입
+INSERT INTO EMP_TEMP VALUES(SEQ_TEMP.NEXTVAL , '홍길동'); -- 223
+INSERT INTO EMP_TEMP VALUES(SEQ_TEMP.NEXTVAL , '고길동'); -- 233
+INSERT INTO EMP_TEMP VALUES(SEQ_TEMP.NEXTVAL , '김길동'); -- 243
 
-
+SELECT * FROM EMP_TEMP;
 
 
 
@@ -63,6 +99,30 @@
   [CYCLE | NOCYCLE] -- 값 순환 여부 지정
   [CACHE 바이트크기 | NOCACHE] -- 캐쉬메모리 기본값은 20바이트, 최소값은 2바이트
 */
+
+
+-- SEQ_TEMP를 1씩 증가하는 형태로 변경
+ALTER SEQUENCE SEQ_TEMP
+INCREMENT BY 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
